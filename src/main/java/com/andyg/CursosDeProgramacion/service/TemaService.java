@@ -38,5 +38,13 @@ public class TemaService {
         return temaRepository.findAll();
     }
 
+    public TemaEntity updatesTema(long id, TemaEntity temaEntity){
+        TemaEntity updateTema = temaRepository.findById(id).get();
+        updateTema.setName(temaEntity.getName());
+        updateTema.setDescription(temaEntity.getDescription());
+        updateTema.setCursoId(temaEntity.getCursoId());
+        return temaRepository.save(updateTema);
+    }
+
 
 }

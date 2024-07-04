@@ -38,5 +38,8 @@ public class TemaController {
         return temaService.listaDeTemas();
     }
 
-
+    @PutMapping("/update/{id}")
+    public TemaEntity updateTema(@PathVariable long id, @RequestBody TemaEntity temaEntity){
+        return temaService.updatesTema(id, temaEntity);
+    }
 }
