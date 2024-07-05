@@ -7,7 +7,6 @@ import com.andyg.CursosDeProgramacion.persistence.repository.TemaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -38,13 +37,14 @@ public class TemaService {
         return temaRepository.findAll();
     }
 
-    public TemaEntity updatesTema(long id, TemaEntity temaEntity){
-        TemaEntity updateTema = temaRepository.findById(id).get();
+    public TemaEntity updatesTema(Long id, TemaEntity temaEntity) {
+        TemaEntity updateTema = temaRepository.findById(id).orElseThrow(() -> new RuntimeException("Tema no encontrado"));
         updateTema.setName(temaEntity.getName());
         updateTema.setDescription(temaEntity.getDescription());
         updateTema.setCursoId(temaEntity.getCursoId());
         return temaRepository.save(updateTema);
     }
+
 
 
 }
