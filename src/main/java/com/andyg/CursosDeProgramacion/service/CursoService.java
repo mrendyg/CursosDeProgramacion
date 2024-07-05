@@ -51,6 +51,7 @@ public class CursoService {
         return new CursoTemaDTO(cursoEntity.getName(), listaTemas);
     }
 
+    //Buscar la palabra Java en los titulos de los cursos
     public List<CursoEntity> getsCursoJava(){
         String keyword = "Java";
         String keywordCompare;
@@ -68,6 +69,7 @@ public class CursoService {
         return listaCursoJava;
     }
 
+    //Actualizar un curso
     public CursoEntity updatesCurso(long id, CursoEntity cursoEntity){
         CursoEntity updatedCurso = cursoRepository.findById(id).get();
         updatedCurso.setName(cursoEntity.getName());
