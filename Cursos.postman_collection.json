@@ -1,0 +1,195 @@
+{
+	"info": {
+		"_postman_id": "eedc2dac-8263-47e8-bafd-79c02daf65d7",
+		"name": "Cursos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24511908"
+	},
+	"item": [
+		{
+			"name": "CrearTema",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n    {\r\n        \"name\": \"Programacion orientanda a objetos\",\r\n        \"description\": \"Programacion orientanda a objeto Java\",\r\n        \"cursoId\":  [{\r\n            \"id\": 1\r\n        }]\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/tema/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tema",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CrearCurso",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"name\": \"Java Basico\",\r\n        \"modalidad\": \"Presencial\",\r\n        \"fecha_finalizacion\": \"2024-09-20T23:30:00\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/curso/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"curso",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListaCursos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/curso/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"curso",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListaTemas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/tema/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tema",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "busquedaporJava",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/curso/java",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"curso",
+						"java"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizacionCurso",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Java Basico\",\r\n    \"modalidad\": \"Presencial\",\r\n    \"fecha_finalizacion\": \"2024-09-20T23:30:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/curso/update/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"curso",
+						"update",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ActualizacionTemas",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"id\": 1,\r\n        \"name\": \"Progamacion en Java Basica\",\r\n        \"description\": \"Java Basico\",\r\n        \"cursoId\": [\r\n            {\r\n                \"id\": 1,\r\n                \"name\": \"Programacion en Java\",\r\n                \"modalidad\": \"Online\",\r\n                \"fecha_finalizacion\": \"2024-09-20T23:30:00\"\r\n            }\r\n        ]\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/tema/update/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tema",
+						"update",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
